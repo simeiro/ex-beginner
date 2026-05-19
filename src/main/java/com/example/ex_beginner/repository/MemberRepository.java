@@ -33,6 +33,8 @@ public class MemberRepository {
                     members
                 WHERE
                     name LIKE :name
+                ORDER BY
+                    name
                 """;
         SqlParameterSource param = new MapSqlParameterSource()
                 .addValue("name", "%" + name + "%");

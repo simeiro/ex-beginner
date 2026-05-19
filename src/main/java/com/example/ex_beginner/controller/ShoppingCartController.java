@@ -59,7 +59,6 @@ public class ShoppingCartController {
     public String delete(int index, HttpSession session) {
         List<Item> cartItems = (List<Item>) session.getAttribute("cart");
         cartItems.remove(index);
-        session.setAttribute("cart", cartItems);
 
         return "redirect:/exam06";
     }
