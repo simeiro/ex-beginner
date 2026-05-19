@@ -2,7 +2,6 @@ package com.example.ex_beginner.controller;
 
 import com.example.ex_beginner.form.CalcForm;
 import jakarta.servlet.http.HttpSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,16 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/exam02")
 public class Exam02Controller {
 
-    @Autowired
-    private HttpSession session;
-
     @GetMapping("")
     public String index(CalcForm calcForm) {
         return "exam02";
     }
 
     @PostMapping("/result")
-    public String result(CalcForm calcForm) {
+    public String result(CalcForm calcForm, HttpSession session) {
         session.setAttribute("calcForm", calcForm);
         session.setAttribute("addResult", calcForm.getAddResult());
         return "exam02-result";
