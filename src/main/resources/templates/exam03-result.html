@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>合計金額</h1>
+<div>
+    ▪️税抜価格 <br>
+    <span th:text="${application.sum}"></span>円
+</div>
+<div>
+    ▪️税込価格 <br>
+    <span th:text="${application.taxSum}"></span>円
+</div>
+
+</body>
+</html>
