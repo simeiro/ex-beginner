@@ -50,7 +50,6 @@ public class ShoppingCartController {
         List<Item> cartItems = (List<Item>) session.getAttribute("cart");
 
         cartItems.add(items.get(index));
-        session.setAttribute("cart", cartItems);
 
         return "redirect:/exam06";
     }
